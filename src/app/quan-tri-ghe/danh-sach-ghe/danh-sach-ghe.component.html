@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 bg-info mx-auto px-4 text-center">
+            <h2 class="mt-0 text-while text-center">Đặt ghế</h2>
+            <app-ghe *ngFor="let ghe of DanhSachGhe" [itemGhe]="ghe" (emitStatus)="DatGheParent($event, ghe)"></app-ghe>
+            <hr>
+            <p *ngFor="let ghe of DanhSachGheDangDat">
+                <span> Tên ghế: {{ghe.TenGhe}} </span>
+                <span>Giá: {{ghe.Gia}} </span>
+            </p>
+            <hr>
+            <p>Số ghế đã đặt: {{soGheDaDat}} </p>
+            <p>Số ghế còn lại: {{soGheConLai}} </p>
+        </div>
+    </div>
+</div>
