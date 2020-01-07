@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root'
 })
-export class MovieGateway{
+
+export class MovieDetailGateway{
     constructor(private _http:HttpClient){}
 
-    public fetchMovieList(){
+    public fetchMovieDetail(ma){
         return this._http.get(
-            "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01"
+            `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${ma}`
         )
     }
 }

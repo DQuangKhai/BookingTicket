@@ -1,5 +1,9 @@
-<div class="movie__item item">
-    <img [src]="ItemPhim.HinhAnh" alt="">
-    <p>{{ItemPhim.TenPhim}}</p>
-    <button>Xem thêm</button>
-</div>
+<ng-container *ngIf="ItemPhim">
+    <div class="movie__item item">
+        <img [src]="ItemPhim.hinhAnh" alt="">
+        <p>{{ItemPhim.tenPhim}}</p>
+        <button>
+            <a [routerLink]="['/detail/' + ItemPhim.maPhim]">Mua vé</a>
+        </button>
+    </div>
+</ng-container>

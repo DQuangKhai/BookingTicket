@@ -7,11 +7,11 @@
 
 <div class="row">
     <div class="col-12" *ngIf="dangChieuStatus; else phimSapChieu">
-        <app-phim-dang-chieu></app-phim-dang-chieu>
+        <app-hien-thi-phim [danhSach]="danhSachPhim | slice:0:7"></app-hien-thi-phim>
     </div>
     <ng-template #phimSapChieu>
         <div class="col-12">
-            <app-phim-sap-chieu></app-phim-sap-chieu>
+            <app-hien-thi-phim [danhSach]="danhSachPhim | slice:7"></app-hien-thi-phim>
         </div>
     </ng-template>
 </div>

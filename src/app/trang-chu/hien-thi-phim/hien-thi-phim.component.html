@@ -1,0 +1,7 @@
+<ng-container *ngIf="danhSach.length > 0">
+    <owl-carousel [options]="settingsOwl" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div class="item" *ngFor="let item of danhSach; let i = index">
+            <app-item-phim [ItemPhim]="item"></app-item-phim>
+        </div>
+    </owl-carousel>
+</ng-container>

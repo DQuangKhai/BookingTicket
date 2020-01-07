@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieGateway } from 'src/app/gateways/movie.gateway';
 
 @Component({
   selector: 'app-loai-phim',
@@ -8,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class LoaiPhimComponent implements OnInit {
 
   dangChieuStatus: boolean = true;
+  danhSachPhim: any[] = []
 
-  constructor() { }
+  constructor(
+    private movieGateway: MovieGateway
+  ) { }
 
 
   HienPhimDangChieu(){
@@ -21,6 +25,14 @@ export class LoaiPhimComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initService()
+  }
+
+  initService() {
+    this.movieGateway.fetchMovieList().subscribe((res: any) => {
+      console.log(res);
+      this.danhSachPhim = res;
+    })
   }
 
 }

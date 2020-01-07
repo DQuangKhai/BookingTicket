@@ -7,6 +7,8 @@ import {TrangChuModule} from './trang-chu/trang-chu.module';
 import { QuanTriGheModule } from './quan-tri-ghe/quan-tri-ghe.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     TrangChuModule,
     QuanTriGheModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

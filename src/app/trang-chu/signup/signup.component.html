@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <form #formSignup="ngForm" (submit)="signupUserHandler(formSignup)">
+                <h4 class="display-4 text-center">Đăng Ký</h4>
+                <div class="form-group">
+                    <label for="">Tài Khoản</label>
+                    <input #taiKhoan="ngModel" type="text" name="taiKhoan" ngModel required class="form-control">
+                    <div *ngIf="taiKhoan.errors && (taiKhoan.dirty || taiKhoan.touched)">
+                        <div *ngIf="taiKhoan.errors.required === true" class="alert alert-danger">
+                            * Vui lòng nhập tài khoản
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Mật Khẩu</label>
+                    <input #matKhau="ngModel" type="password" required minlength="8 " maxlength="16 " name="matKhau" ngModel required class="form-control ">
+                    <div *ngIf="matKhau.errors && (matKhau.dirty || matKhau.touched)">
+                        <div *ngIf="matKhau.errors.required === true" class="alert alert-danger">
+                            * Vui lòng nhập mật khẩu
+                        </div>
+                        <div *ngIf="matKhau.errors.minlength || matKhau.errors.maxlength === true" class="alert alert-danger">
+                            * Mật khẩu phải có từ 8 tới 16 kí tự
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for=" ">Họ Tên: </label>
+                    <input #hoTen="ngModel" type=" text " name="hoTen" ngModel required class="form-control ">
+                    <div *ngIf="hoTen.errors && (hoTen.dirty || hoTen.touched) ">
+                        <div *ngIf="hoTen.errors.required === true" class="alert alert-danger ">
+                            * Vui lòng nhập họ tên
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for=" ">Email</label>
+                    <input #email="ngModel" type="email " name="email" ngModel required class="form-control ">
+                </div>
+                <div class="form-group ">
+                    <label for=" ">Số ĐT</label>
+                    <input #soDt="ngModel" type="text " name="soDt" ngModel required class="form-control ">
+                </div>
+                <div class="form-group ">
+                    <button class="btn btn-success " type="submit " [disabled]="formSignup.invalid ">Đăng Ký</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
